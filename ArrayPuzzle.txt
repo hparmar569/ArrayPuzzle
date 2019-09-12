@@ -1,0 +1,28 @@
+import java.util.*;
+public class ArrayPuzzle
+{
+    public static void main(String[]args)
+    {
+        Scanner c=new Scanner(System.in);
+        int n=c.nextInt();
+        int arr[]=new int[n];  
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=c.nextInt();
+        }
+        int product=1;
+        for(int i=0;i<n;i++)
+        {
+          product=product*arr[i];
+        }
+        int[] newarr = Arrays.copyOf(arr,n);
+        for(int i=0;i<n;i++)
+        {
+            newarr[i]=product/arr[i];
+        }
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(newarr[i] + " ");
+        }
+    }
+}
